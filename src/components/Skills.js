@@ -46,12 +46,12 @@ const Skills = () => {
               <span className="ml-2 text-gray-700">MongoDB</span>
             </div>
             <div className="flex items-center">
-              <FaDatabase className="text-4xl text-purple-700" />
-              <span className="ml-2 text-gray-700">SQL</span>
-            </div>
-            <div className="flex items-center">
               <FaPython className="text-4xl text-purple-700" />
               <span className="ml-2 text-gray-700">Python</span>
+            </div>
+            <div className="flex items-center">
+              <FaDatabase className="text-4xl text-purple-700" />
+              <span className="ml-2 text-gray-700">SQL</span>
             </div>
           </div>
         </div>

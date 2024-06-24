@@ -17,10 +17,11 @@ const Header = () => {
     <header className="bg-gradient-to-r from-black via-purple-800 to-black text-white p-4 relative z-10">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
-       
-        <Link to="/"><div className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-violet-600 font-bold">
-            B
-          </div></Link>
+          <Link to="/">
+            <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-violet-600 font-bold">
+              B
+            </div>
+          </Link>
           <Link to="/"><h1 className="text-xl font-bold">BalaVardhan</h1></Link>
         </div>
 
@@ -72,7 +73,6 @@ const Header = () => {
                 Education
               </Link>
             </li>
-           
           </ul>
         </nav>
       </div>
@@ -116,8 +116,6 @@ const Header = () => {
                 Education
               </Link>
             </li>
-           
-           
           </ul>
         </div>
       )}

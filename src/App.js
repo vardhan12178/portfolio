@@ -10,9 +10,9 @@ import Projects from './components/Projects';
 const App = () => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen font-poppins">
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow bg-gray-50">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/education" element={<Education />} />
