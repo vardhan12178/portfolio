@@ -34,10 +34,17 @@ const Home = () => {
           <p className="text-base text-gray-700 leading-relaxed">
             Skilled in integrating front-end components with RESTful APIs and managing application state for seamless performance.
           </p>
-          <div className="mt-4 flex justify-center md:justify-start">
-            <Button text="Contact Me" onClick={handleContactMe} />
-            <span className="ml-4"></span>
-            <Button text="Download Resume" onClick={handleDownloadResume} />
+          <div className="mt-4 flex justify-center md:justify-start space-x-4">
+            <Button
+              text="Contact Me"
+              onClick={handleContactMe}
+              className="md:px-4 md:py-2 px-3 py-1 text-sm md:text-base"
+            />
+            <Button
+              text="Download Resume"
+              onClick={handleDownloadResume}
+              className="md:px-4 md:py-2 px-3 py-1 text-sm md:text-base"
+            />
           </div>
         </div>
       </div>
