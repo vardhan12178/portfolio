@@ -13,13 +13,15 @@ const Projects = () => {
             key={index}
             className="bg-white rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
           >
-            <img
-              src={project.imgUrl}
-              alt={project.title}
-              className="w-full h-48 object-cover rounded-t-lg"
-              loading="lazy"
-            />
-            <div className="p-6">
+            <div className="p-4">
+              <img
+                src={project.imgUrl}
+                alt={project.title}
+                className="w-full h-40 object-cover rounded-lg"
+                loading="lazy"
+              />
+            </div>
+            <div className="px-6 pb-6">
               <h2 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h2>
               <p className="text-gray-700 mb-4">{project.description}</p>
               <div className="flex justify-between">
