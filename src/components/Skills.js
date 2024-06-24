@@ -8,10 +8,10 @@ const Skills = () => {
       <h1 className="text-3xl font-bold mb-6 text-purple-700 hover:text-purple-600 transition-colors duration-300 text-center">
         Skills
       </h1>
-      <div className="bg-white p-6 rounded-lg shadow-lg">
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">Primary Skills</h2>
-          <div className="flex items-center space-x-4">
+      <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+        <div className="mb-6 w-full">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2 text-center">Primary Skills</h2>
+          <div className="flex flex-wrap justify-center space-x-4 space-y-4 md:space-y-0">
             <div className="flex items-center">
               <DiHtml5 className="text-4xl text-purple-700" />
               <span className="ml-2 text-gray-700">HTML5</span>
@@ -34,9 +34,9 @@ const Skills = () => {
             </div>
           </div>
         </div>
-        <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">Secondary Skills</h2>
-          <div className="flex items-center space-x-4">
+        <div className="w-full">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2 text-center">Secondary Skills</h2>
+          <div className="flex flex-wrap justify-center space-x-4 space-y-4 md:space-y-0">
             <div className="flex items-center">
               <DiNodejsSmall className="text-4xl text-purple-700" />
               <span className="ml-2 text-gray-700">Node.js</span>
