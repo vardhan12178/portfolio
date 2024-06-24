@@ -3,19 +3,13 @@ import React from 'react';
 const Projects = () => {
   const projects = [
     {
-      title: "Ecommerce Site",
-      description: "An ecommerce website built using React.",
-      imgUrl: "https://i.imgur.com/gCFlWIb.jpeg",
-      liveUrl: "https://vkartshop.netlify.app/",
-      githubUrl: "https://github.com/vardhan12178/Ecommerce",
+      title: "Food App",
+      description: "Food Hub.",
+      imgUrl: "https://i.imgur.com/s6nDRM2.jpeg",
+      liveUrl: "https://vardhan-food.netlify.app/",
+      githubUrl: "https://github.com/vardhan12178/Food-App",
     },
-    {
-      title: "Weather Dashboard",
-      description: "A weather dashboard application.",
-      imgUrl: "https://i.imgur.com/dBlkbNw.jpeg",
-      liveUrl: "https://vardhan-weather.netlify.app/",
-      githubUrl: "https://github.com/vardhan12178/weather",
-    },
+
     {
       title: "Portfolio",
       description: "Personal Portfolio.",
@@ -24,19 +18,44 @@ const Projects = () => {
       githubUrl: "https://github.com/vardhan12178/wikisearch",
     },
     {
+      title: "Weather Dashboard",
+      description: "A weather dashboard application.",
+      imgUrl: "https://i.imgur.com/dBlkbNw.jpeg",
+      liveUrl: "https://vardhan-weather.netlify.app/",
+      githubUrl: "https://github.com/vardhan12178/weather",
+    },
+    
+    {
+      title: "Ecommerce Site",
+      description: "An ecommerce website built using React.",
+      imgUrl: "https://i.imgur.com/gCFlWIb.jpeg",
+      liveUrl: "https://vkartshop.netlify.app/",
+      githubUrl: "https://github.com/vardhan12178/Ecommerce",
+    },
+    {
+      title: "Expenses App",
+      description: "Application to track monthly expenses ",
+      imgUrl: "https://i.imgur.com/QbmI0Y7.jpeg",
+      liveUrl: "https://vardhan-expense.netlify.app/",
+      githubUrl: "https://github.com/vardhan12178/Expenses",
+    },
+    {
+      title: "Taskmate",
+      description: "For adding taily tasks",
+      imgUrl: "https://i.imgur.com/Nuv1CNN.jpeg",
+      liveUrl: "https://vardhan-taskmate.netlify.app/",
+      githubUrl: "https://github.com/vardhan12178/Taskmate",
+    },
+    
+    
+    {
       title: "Wikipedia Search",
       description: "A Wikipedia search application.",
       imgUrl: "https://i.imgur.com/OiXm0zm.jpeg",
       liveUrl: "https://vardhan-wikisearch.netlify.app/",
       githubUrl: "https://github.com/vardhan12178/wikisearch",
     },
-    {
-      title: "IPL Dashboard",
-      description: "IPL Dashboard.",
-      imgUrl: "https://drive.google.com/uc?id=YOUR_IMAGE_ID",
-      liveUrl: "https://vardhan-wikisearch.netlify.app/",
-      githubUrl: "https://github.com/vardhan12178/wikisearch",
-    },
+    
   ];
 
   return (
