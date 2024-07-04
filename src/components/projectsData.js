@@ -1,10 +1,11 @@
 const projects = [
+   
     {
-      title: "Food App",
-      description: "A comprehensive food ordering application featuring an intuitive UI and seamless order tracking.",
-      imgUrl: "https://i.imgur.com/s6nDRM2.jpeg",
-      liveUrl: "https://vardhan-food.netlify.app/",
-      githubUrl: "https://github.com/vardhan12178/Food-App",
+      title: "Weather Dashboard",
+      description: "A weather dashboard application providing real-time weather updates and forecasts using a clean, responsive design.",
+      imgUrl: "https://i.imgur.com/IbY1M7q.jpeg",
+      liveUrl: "https://vardhan-weather.netlify.app/",
+      githubUrl: "https://github.com/vardhan12178/weather",
     },
     {
       title: "Portfolio",
@@ -13,19 +14,20 @@ const projects = [
       liveUrl: "https://vardhan-portfolio.netlify.app/",
       githubUrl: "https://github.com/vardhan12178/portfolio",
     },
-    {
-      title: "Weather Dashboard",
-      description: "A weather dashboard application providing real-time weather updates and forecasts using a clean, responsive design.",
-      imgUrl: "https://i.imgur.com/dBlkbNw.jpeg",
-      liveUrl: "https://vardhan-weather.netlify.app/",
-      githubUrl: "https://github.com/vardhan12178/weather",
-    },
+    
     {
       title: "Ecommerce Site",
       description: "An ecommerce website built using React, featuring product listings, search functionality, and a shopping cart.",
       imgUrl: "https://i.imgur.com/gCFlWIb.jpeg",
       liveUrl: "https://vkartshop.netlify.app/",
       githubUrl: "https://github.com/vardhan12178/Ecommerce",
+    },
+    {
+      title: "Food App",
+      description: "A comprehensive food ordering application featuring an intuitive UI and seamless order tracking.",
+      imgUrl: "https://i.imgur.com/s6nDRM2.jpeg",
+      liveUrl: "https://vardhan-food.netlify.app/",
+      githubUrl: "https://github.com/vardhan12178/Food-App",
     },
     {
       title: "Expenses App",
