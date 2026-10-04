@@ -1,124 +1,108 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+
+const navigation = [
+  { to: '/', label: 'Home' },
+  { to: '/skills', label: 'Skills' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/education', label: 'Education' },
+];
+
+const linkClassName = ({ isActive }) =>
+  `block rounded-md px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-300 ${
+    isActive
+      ? 'bg-white/20 text-purple-200 underline underline-offset-4'
+      : 'text-white hover:bg-white/10 hover:text-purple-200'
+  }`;
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuButtonRef = useRef(null);
+  const location = useLocation();
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
+  useEffect(() => {
     setIsMobileMenuOpen(false);
-  };
+  }, [location.key]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMobileMenuOpen]);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const renderLinks = () =>
+    navigation.map(({ to, label }) => (
+      <li key={to}>
+        <NavLink
+          to={to}
+          end
+          onClick={closeMobileMenu}
+          className={linkClassName}
+        >
+          {label}
+        </NavLink>
+      </li>
+    ));
 
   return (
     <header className="bg-gradient-to-r from-black via-purple-800 to-black text-white p-4 relative z-10">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center space-x-4">
-          <Link to="/">
-            <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-violet-600 font-bold">
-              B
-            </div>
-          </Link>
-          <Link to="/"><h1 className="text-xl font-bold">BalaVardhan</h1></Link>
-        </div>
+        <Link
+          to="/"
+          onClick={closeMobileMenu}
+          aria-label="BalaVardhan home"
+          className="flex items-center space-x-4 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-300"
+        >
+          <span aria-hidden="true" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-violet-600 font-bold">
+            B
+          </span>
+          <span className="text-xl font-bold">BalaVardhan</span>
+        </Link>
 
-        <div className="block lg:hidden">
-          <button
-            onClick={toggleMobileMenu}
-            className="text-white focus:outline-none"
-            aria-label="Toggle Mobile Menu"
-          >
-            {isMobileMenuOpen ? (
-              <XIcon className="w-8 h-8" />
-            ) : (
-              <MenuIcon className="w-8 h-8" />
-            )}
-          </button>
-        </div>
+        <button
+          ref={menuButtonRef}
+          type="button"
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
+          className="lg:hidden rounded-md p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-300"
+          aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
+        >
+          {isMobileMenuOpen ? (
+            <XIcon className="w-6 h-6" aria-hidden="true" />
+          ) : (
+            <MenuIcon className="w-6 h-6" aria-hidden="true" />
+          )}
+        </button>
 
-        <nav className="hidden lg:flex">
-          <ul className="flex justify-end items-center space-x-6">
-            <li>
-              <Link
-                to="/"
-                className="text-white hover:underline hover:text-purple-300 transition duration-300"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/skills"
-                className="text-white hover:underline hover:text-purple-300 transition duration-300"
-              >
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/projects"
-                className="text-white hover:underline hover:text-purple-300 transition duration-300"
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/education"
-                className="text-white hover:underline hover:text-purple-300 transition duration-300"
-              >
-                Education
-              </Link>
-            </li>
+        <nav aria-label="Main navigation" className="hidden lg:flex">
+          <ul className="flex justify-end items-center space-x-2">
+            {renderLinks()}
           </ul>
         </nav>
       </div>
 
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-gradient-to-r from-black via-purple-800 to-black py-4 px-8 absolute top-full left-0 right-0">
-          <ul className="flex flex-col items-center space-y-4">
-            <li>
-              <Link
-                to="/"
-                onClick={closeMobileMenu}
-                className="text-white hover:underline hover:text-purple-300 transition duration-300"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/skills"
-                onClick={closeMobileMenu}
-                className="text-white hover:underline hover:text-purple-300 transition duration-300"
-              >
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/projects"
-                onClick={closeMobileMenu}
-                className="text-white hover:underline hover:text-purple-300 transition duration-300"
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/education"
-                onClick={closeMobileMenu}
-                className="text-white hover:underline hover:text-purple-300 transition duration-300"
-              >
-                Education
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
+      <nav
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        hidden={!isMobileMenuOpen}
+        className="lg:hidden bg-gradient-to-r from-black via-purple-800 to-black py-4 px-8 absolute top-full left-0 right-0 shadow-lg"
+      >
+        <ul className="flex flex-col items-center space-y-4">
+          {renderLinks()}
+        </ul>
+      </nav>
     </header>
   );
 };
